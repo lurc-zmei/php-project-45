@@ -13,6 +13,10 @@
             "email": "lurc-zmei@inbox.ru"
         }
     ],
+    "license": "MIT",
+    "bin": [
+  "bin/brain-games"
+    ],
     "minimum-stability": "stable",
     "require": {}
 }

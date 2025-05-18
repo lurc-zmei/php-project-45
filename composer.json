@@ -5,7 +5,8 @@
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [ "src/Cli.php" ]
     },
     "authors": [
         {
@@ -15,8 +16,10 @@
     ],
     "license": "MIT",
     "bin": [
-  "bin/brain-games"
+        "bin/brain-games"
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.5"
+    }
 }

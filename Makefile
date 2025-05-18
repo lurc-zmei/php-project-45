@@ -1,9 +1,9 @@
 install: # установка пакетов в /vendor
-		composer install
-
-brain-games: # запуск приветствия
-		./bin/brain-games
+	composer install
 
 validate: # проверка файла composer.json
-		composer validate
+	composer validate
 
+brain-games: # запуск приветствия
+	chmod +x bin/brain-games
+	brain-games

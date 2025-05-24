@@ -6,7 +6,10 @@
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         },
-        "files": [ "src/Cli.php" ]
+        "files": [
+            "src/Cli.php",
+            "src/brain-even.php"
+        ]
     },
     "authors": [
         {
@@ -16,7 +19,8 @@
     ],
     "license": "MIT",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even"
     ],
     "minimum-stability": "stable",
     "require": {

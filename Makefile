@@ -1,13 +1,16 @@
 install: # установка пакетов в /vendor
 	composer install
+	chmod +x bin/brain-games
+	chmod +x bin/brain-even
+
+validate: # проверка файла composer.json
+	composer validate
+
+lint: #CodeSniffer
+	composer exec --verbose phpcs -- --standard=PSR12 src bin
 
 brain-games: # запуск приветствия
-	chmod +x bin/brain-games
 	brain-games
 
-validate: # проверка файла .json
-	composer validate
-	
-lint: # CodeSniffer
-	composer exec --verbose phpcs -- --standard=PSR12 src bin
-	
+brain-even:
+	./bin/brain-even

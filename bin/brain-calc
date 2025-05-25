@@ -12,9 +12,9 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Php\Project\Cli\greetings;
-use function Php\Project\Games\Brain\Even\runEven;
-use function Php\Project\Games\Brain\Even\even;
+use function Php\Project\Games\Brain\Calc\runCalc;
+use function Php\Project\Games\Brain\Calc\calc;
 
 greetings();
-runEven();
-even();
+runCalc();
+calc();

@@ -4,6 +4,7 @@ install: # установка пакетов в /vendor
 	chmod +x bin/brain-even
 	chmod +x bin/brain-calc
 	chmod +x bin/brain-gcd
+	chmod +x bin/brain-progression
 
 validate: # проверка файла composer.json
 	composer validate
@@ -24,3 +25,6 @@ brain-calc:
 
 brain-gcd:
 	./bin/brain-gcd
+
+brain-progression:
+	./bin/brain-progression

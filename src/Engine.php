@@ -22,7 +22,7 @@ function checkAnswer(): bool
             break;
 
         default:
-            echo "'$answer' is wrong answer ;(. Correct answer was '$result'.\nLet's try again, $userName!";
+            echo "'$answer' is wrong answer ;(. Correct answer was '$result'.\nLet's try again, $userName!\n";
     }
     return false; // завершаем игру
 }
@@ -33,5 +33,5 @@ function congratulate(): void
 {
     global $userName;
 
-    print_r("Congratulations, $userName!");
+    print_r("Congratulations, $userName!\n");
 }

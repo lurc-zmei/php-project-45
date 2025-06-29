@@ -35,37 +35,37 @@ make lint-fix
 
 ## Games
 ### Brain-even
-Answer "yes" if the number is even, otherwise answer "no".
-
+Answer "yes" if the number is even, otherwise answer "no".  
+[![asciicast](https://asciinema.org/a/115PGx2dQ6FlnPD7e6h3AvaPb.svg)](https://asciinema.org/a/115PGx2dQ6FlnPD7e6h3AvaPb)  
 ```sh
 make brain-even
 ```
 
 
 ### Brain-calc
-What is the result of the expression?
-
+What is the result of the expression?  
+[![asciicast](https://asciinema.org/a/x2ej14sWdiPJIeHgySbhHF2pI.svg)](https://asciinema.org/a/x2ej14sWdiPJIeHgySbhHF2pI)  
 ```sh
 make brain-calc
 ```
 
 ### Brain-gcd
-Find the greatest common divisor of given numbers.
-
+Find the greatest common divisor of given numbers.  
+[![asciicast](https://asciinema.org/a/TOq47EsKDzTWsnnoFY2z07R0A.svg)](https://asciinema.org/a/TOq47EsKDzTWsnnoFY2z07R0A)  
 ```sh
 make brain-gcd
 ```
 
 ### Brain-progression
-What number is missing in the progression?
-
+What number is missing in the progression?  
+[![asciicast](https://asciinema.org/a/E1UQ0LXB90uVq3sp5MLIr5sIv.svg)](https://asciinema.org/a/E1UQ0LXB90uVq3sp5MLIr5sIv)  
 ```sh
 make brain-progression
 ```
 
 ### Brain-prime
-Answer "yes" if given number is prime. Otherwise answer "no".
-
+Answer "yes" if given number is prime. Otherwise answer "no".  
+[![asciicast](https://asciinema.org/a/vi34ko4OHY6OkHndLNrsQFHDx.svg)](https://asciinema.org/a/vi34ko4OHY6OkHndLNrsQFHDx)  
 ```sh
 make brain-prime
 ```

@@ -27,7 +27,7 @@ function runEven(): void
         ];
     }
 
-    checkAnswer($data, "Answer 'yes' if the number is even, otherwise answer 'no'");
+    checkAnswer($data, 'Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 function isEven($number): bool

@@ -23,7 +23,7 @@ function runPrime(): void
         ];
     }
 
-    checkAnswer($data, "Answer 'yes' if the number is prime, otherwise answer 'no'.");
+    checkAnswer($data, 'Answer "yes" if the number is prime, otherwise answer "no".');
 }
 
 

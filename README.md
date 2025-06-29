@@ -12,3 +12,60 @@
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/lurc-zmei/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/lurc-zmei/php-project-45/actions)
+
+
+## Setup
+
+Setup [SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) before clone:
+
+```bash
+git clone git@github.com:lurc-zmei/php-project-45.git
+cd php-project-45
+
+make install
+```
+
+### Run linter or fix
+
+```sh
+make lint
+
+make lint-fix
+```
+
+## Games
+### Brain-even
+Answer "yes" if the number is even, otherwise answer "no".
+
+```sh
+make brain-even
+```
+
+
+### Brain-calc
+What is the result of the expression?
+
+```sh
+make brain-calc
+```
+
+### Brain-gcd
+Find the greatest common divisor of given numbers.
+
+```sh
+make brain-gcd
+```
+
+### Brain-progression
+What number is missing in the progression?
+
+```sh
+make brain-progression
+```
+
+### Brain-prime
+Answer "yes" if given number is prime. Otherwise answer "no".
+
+```sh
+make brain-prime
+```

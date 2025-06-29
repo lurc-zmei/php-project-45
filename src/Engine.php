@@ -2,36 +2,38 @@
 
 namespace Php\Project\Engine;
 
-# проверка ответов
-function checkAnswer(): bool
+use function cli\line;
+use function cli\prompt;
+
+function checkAnswer($data, $description): void
 {
-    global $userName, $answer, $result, $correctAnswerCount;
+    line('Welcome to the Brain Game!');
+    $userName = prompt('May I have your name?');
+    line("Hello, $userName!");
 
-    # сверяем ответ пользователя с нашим результатом
-    switch ($answer == $result) {
-        case true:
-            echo "Correct!\n";
-            $correctAnswerCount++; // увеличиваем счетчик на 1 верный ответ
+    line($description);
 
-            # если верных ответов меньше 3, то продолжаем игру, иначе выводим поздравление
-            if ($correctAnswerCount < 3) {
-                return true;
-            } else {
-                congratulate();
-            }
-            break;
+    foreach ($data as $item) {
+        $question = $item['question'];
+        $rightAnswer = $item['result'];
 
-        default:
-            echo "'$answer' is wrong answer ;(. Correct answer was '$result'.\nLet's try again, $userName!\n";
+        # задаем вопрос и ждем ответ
+        line("Question: $question");
+
+        $userAnswer = prompt("Your answer");
+
+        # проверка ответа
+        if ($userAnswer != $rightAnswer) {
+            line("'$userAnswer' is wrong answer ;(. Correct answer was '$rightAnswer'.\nLet's try again, $userName!");
+            return;
+        } else {
+            line("Correct!");
+        }
     }
-    return false; // завершаем игру
+    congratulate($userName);
 }
 
-
-# поздравление
-function congratulate(): void
+function congratulate($userName): void
 {
-    global $userName;
-
-    print_r("Congratulations, $userName!\n");
+    line("Congratulations, $userName!");
 }

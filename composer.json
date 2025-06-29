@@ -1,18 +1,16 @@
 {
     "name": "hexlet/code",
-    "description": "first project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[CHexlet f\u001b[2~irst \u001b[2~project",
+    "description": "first project",
     "type": "project",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        },
         "files": [
             "src/Cli.php",
             "src/Engine.php",
-            "src/Games/brain-even.php",
-            "src/Games/brain-calc.php",
-            "src/Games/brain-gcd.php",
-            "src/Games/brain-progression.php"
+            "src/Games/Brain-even.php",
+            "src/Games/Brain-calc.php",
+            "src/Games/Brain-gcd.php",
+            "src/Games/Brain-progression.php",
+            "src/Games/Brain-prime.php"
         ]
     },
     "authors": [
@@ -27,7 +25,8 @@
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
-        "bin/brain-progression"
+        "bin/brain-progression",
+        "bin/brain-prime"
     ],
     "minimum-stability": "stable",
     "require": {

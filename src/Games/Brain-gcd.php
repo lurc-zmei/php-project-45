@@ -4,29 +4,31 @@ namespace Php\Project\Games\Brain\Gcd;
 
 use function Php\Project\Engine\checkAnswer;
 
-# условие игры и инициация счетчика
+# логика игры brain-gcd
 function runGcd(): void
 {
-    echo "Find the greatest common divisor of given numbers.\n";
-    global $correctAnswerCount;
-    $correctAnswerCount = 0;
+    define('MAX_ROUND', 3);
+
+    $data = [];
+
+    for ($i = 0; $i < MAX_ROUND; $i++) {
+        # генерируем случайные 2 числа
+        $num1 = rand(1, 99);
+        $num2 = rand(1, 99);
+
+        $data[] = [
+            'game' => 'Brain-gcd',
+            'question' => "$num1 $num2",
+            'result' => gcd($num1, $num2)
+        ];
+    }
+
+    checkAnswer($data, "Find the greatest common divisor of given numbers.");
 }
 
-# логика игры brain-calc
-function gcd(): void
+
+function gcd($num1, $num2): int
 {
-    global $answer, $result;
-
-    # генерируем случайные 2 числа
-    $num1 = rand(1, 99);
-    $num2 = rand(1, 99);
-
-    # запрос ответа у пользователя
-    print_r("Question: $num1 $num2\n");
-    print_r("Your answer: ");
-    $answer = trim(readline());
-
-    # вычисляем результат выражения
     if ($num2 == 0) {
         $result = $num1;
     }
@@ -38,9 +40,5 @@ function gcd(): void
         $result = $num1;
     } while ($num2 !== 0);
 
-
-    # проверка ответа
-    if (checkAnswer()) {
-        gcd(); // если ответ верный, запускаем еще одну итерацию вопросов
-    }
+    return $result;
 }

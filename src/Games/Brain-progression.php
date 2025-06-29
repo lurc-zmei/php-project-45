@@ -4,51 +4,52 @@ namespace Php\Project\Games\Brain\Progression;
 
 use function Php\Project\Engine\checkAnswer;
 
-# условие игры и инициация счетчика
+# логика игры brain-gcd
 function runProgression(): void
 {
-    echo "What number is missing in the progression?\n";
-    global $correctAnswerCount;
-    $correctAnswerCount = 0;
+    define('MAX_ROUND', 3);
+
+    $data = [];
+
+    for ($i = 0; $i < MAX_ROUND; $i++) {
+        # генерируем случайные числа
+        //$start = rand(1, 30); // начальное число
+        $step = random_int(min: 2, max: 9); // арифметическое увеличение
+
+        $map = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        /*
+        // рандомное количество выводимых чисел в массиве по примеру
+        for ($j = 1; $j <= rand(6, 10); $j++) {
+            $map[] = $j;
+        }
+        */
+
+        // под этим номером будет число для вопроса
+        $randElement = rand(2, count($map));
+        $result = $randElement  *  $step;
+
+        $data[] = [
+            'game' => 'Brain-gcd',
+            'question' => progression($map, $randElement, $step),
+            'result' => $result,
+        ];
+    }
+
+    checkAnswer($data, "What number is missing in the progression?");
 }
 
-function arithmetic()
+function progression($map, $randElement, $step): string
 {
-    global $result;
-
-    # генерируем случайные числа
-    $start = rand(1, 70); // начальное число
-    $step = random_int(2, 9); // арифметическое увеличение
-    //$map = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    for ($i = 1; $i <= rand(6, 10); $i++) { // количество выводимых чисел в массиве
-        $map[] = $i;
-    }
-    $randElement = rand(2, count($map)); // под этим номером будет число для вопроса
+    $question = '';
 
     foreach ($map as $index) {
-        $currentElement = $start + $index *  $step;
+        $currentElement = $index *  $step;
 
         if ($index == $randElement) {
-            echo '.. ';
-            $result = $currentElement;
-            continue;
+            $question = "$question ..";
+        } else {
+            $question = "$question $currentElement";
         }
-        echo "$currentElement ";
     }
-}
-# логика игры brain-progression
-function progression(): void
-{
-    global $answer;
-
-    # запрос ответа у пользователя
-    echo 'Question: ', arithmetic(), "\n";
-    echo "Your answer: ";
-    $answer = trim(readline());
-
-
-    # проверка ответа
-    if (checkAnswer()) {
-        progression(); // если ответ верный, запускаем еще одну итерацию вопросов
-    }
+    return $question;
 }

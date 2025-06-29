@@ -51,5 +51,5 @@ function progression($map, $randElement, $step): string
             $question = "$question $currentElement";
         }
     }
-    return $question;
+    return trim($question);
 }

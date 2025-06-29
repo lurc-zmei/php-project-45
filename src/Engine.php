@@ -5,7 +5,7 @@ namespace Php\Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function checkAnswer($data, $description): void
+function checkAnswer(array $data, string $description): void
 {
     line('Welcome to the Brain Game!');
     $userName = prompt('May I have your name?');
@@ -23,7 +23,7 @@ function checkAnswer($data, $description): void
         $userAnswer = prompt("Your answer");
 
         # проверка ответа
-        if ($userAnswer != $rightAnswer) {
+        if ($userAnswer !== $rightAnswer) {
             line("'$userAnswer' is wrong answer ;(. Correct answer was '$rightAnswer'.\nLet's try again, $userName!");
             return;
         } else {
@@ -33,7 +33,7 @@ function checkAnswer($data, $description): void
     congratulate($userName);
 }
 
-function congratulate($userName): void
+function congratulate(string $userName): void
 {
     line("Congratulations, $userName!");
 }

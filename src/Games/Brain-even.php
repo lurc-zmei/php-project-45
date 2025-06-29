@@ -30,7 +30,7 @@ function runEven(): void
     checkAnswer($data, 'Answer "yes" if the number is even, otherwise answer "no".');
 }
 
-function isEven($number): bool
+function isEven(int $number): bool
 {
-    return $number % 2 == 0;
+    return $number % 2 === 0;
 }

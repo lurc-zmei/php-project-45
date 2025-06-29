@@ -27,9 +27,9 @@ function runGcd(): void
 }
 
 
-function gcd($num1, $num2): int
+function gcd(int $num1, int $num2): int
 {
-    if ($num2 == 0) {
+    if ($num2 === 0) {
         $result = $num1;
     }
 

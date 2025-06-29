@@ -27,25 +27,25 @@ function runPrime(): void
 }
 
 
-function prime($number): string
+function prime(int $number): string
 {
     switch ($number) {
         case $number < 2:
             $result = 'no';
             break;
-        case $number == 2:
+        case $number === 2:
             $result = 'no';
             break;
-        case $number % 2 == 0:
+        case $number % 2 === 0:
             $result = 'no';
             break;
         default:
             $result = 'yes';
-            if ($number % 3 == 0) {
+            if ($number % 3 === 0) {
                 $result = 'no';
             } else {
                 for ($i = 3; $i < sqrt($number); $i++) {
-                    if ($number % $i == 0) {
+                    if ($number % $i === 0) {
                         $result = 'no';
                     }
                 }

@@ -31,8 +31,9 @@ function runCalc(): void
     checkAnswer($data, "What is the result of the expression?");
 }
 
-function calc($num1, $num2, $operator): int
+function calc(int $num1, int $num2, string $operator): int
 {
+    $result = 0;
     switch ($operator) {
         case '+':
             $result = $num1 + $num2;

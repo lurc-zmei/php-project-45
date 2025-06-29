@@ -38,14 +38,14 @@ function runProgression(): void
     checkAnswer($data, "What number is missing in the progression?");
 }
 
-function progression($map, $randElement, $step): string
+function progression(array $map, int $randElement, int $step): string
 {
     $question = '';
 
     foreach ($map as $index) {
         $currentElement = $index *  $step;
 
-        if ($index == $randElement) {
+        if ($index === $randElement) {
             $question = "$question ..";
         } else {
             $question = "$question $currentElement";

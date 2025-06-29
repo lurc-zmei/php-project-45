@@ -31,7 +31,7 @@ function runProgression(): void
         $data[] = [
             'game' => 'Brain-gcd',
             'question' => progression($map, $randElement, $step),
-            'result' => $result,
+            'result' => (string) $result,
         ];
     }
 

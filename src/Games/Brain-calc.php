@@ -45,5 +45,5 @@ function calc(int $num1, int $num2, string $operator): string
             $result = $num1 * $num2;
             break;
     }
-    return $result;
+    return (string)$result;
 }

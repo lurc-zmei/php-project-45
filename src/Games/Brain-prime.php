@@ -29,14 +29,14 @@ function runPrime(): void
 
 function prime(int $number): string
 {
-    switch ($number) {
-        case $number < 2:
+    switch (true) {
+        case ($number < 2):
             $result = 'no';
             break;
-        case $number === 2:
+        case ($number === 2):
             $result = 'no';
             break;
-        case $number % 2 === 0:
+        case ($number % 2 === 0):
             $result = 'no';
             break;
         default:

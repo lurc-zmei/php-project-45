@@ -40,5 +40,5 @@ function gcd(int $num1, int $num2): string
         $result = $num1;
     } while ($num2 !== 0);
 
-    return $result;
+    return (string)$result;
 }

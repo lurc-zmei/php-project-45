@@ -11,6 +11,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use function Php\Project\Games\Brain\Even\runEven;
+use function Php\Project\Games\BrainEven\runEven;
 
 runEven();

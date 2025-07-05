@@ -5,7 +5,9 @@ namespace Php\Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function checkAnswer(array $data, string $description): void
+define('MAX_ROUND', 3);
+
+function runGameEngine(array $data, string $description): void
 {
     line('Welcome to the Brain Game!');
     $userName = prompt('May I have your name?');

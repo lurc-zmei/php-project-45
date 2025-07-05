@@ -1,14 +1,12 @@
 <?php
 
-namespace Php\Project\Games\Brain\Calc;
+namespace Php\Project\Games\BrainCalc;
 
-use function Php\Project\Engine\checkAnswer;
+use function Php\Project\Engine\runGameEngine;
 
 # логика игры brain-calc
 function runCalc(): void
 {
-    define('MAX_ROUND', 3);
-
     $data = [];
 
     for ($i = 0; $i < MAX_ROUND; $i++) {
@@ -23,12 +21,11 @@ function runCalc(): void
         $operator = $operatorArr[random_int(0, 2)];
 
         $data[] = [
-            'game' => 'Brain-calc',
             'question' => "$num1 $operator $num2",
             'result' => calc($num1, $num2, $operator)
         ];
     }
-    checkAnswer($data, "What is the result of the expression?");
+    runGameEngine($data, "What is the result of the expression?");
 }
 
 function calc(int $num1, int $num2, string $operator): string

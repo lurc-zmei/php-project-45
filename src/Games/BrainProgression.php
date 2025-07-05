@@ -1,14 +1,12 @@
 <?php
 
-namespace Php\Project\Games\Brain\Progression;
+namespace Php\Project\Games\BrainProgression;
 
-use function Php\Project\Engine\checkAnswer;
+use function Php\Project\Engine\runGameEngine;
 
 # логика игры brain-gcd
 function runProgression(): void
 {
-    define('MAX_ROUND', 3);
-
     $data = [];
 
     for ($i = 0; $i < MAX_ROUND; $i++) {
@@ -29,13 +27,12 @@ function runProgression(): void
         $result = $randElement  *  $step;
 
         $data[] = [
-            'game' => 'Brain-gcd',
             'question' => progression($map, $randElement, $step),
             'result' => (string) $result,
         ];
     }
 
-    checkAnswer($data, "What number is missing in the progression?");
+    runGameEngine($data, "What number is missing in the progression?");
 }
 
 function progression(array $map, int $randElement, int $step): string

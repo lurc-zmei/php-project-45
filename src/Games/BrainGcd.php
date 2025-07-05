@@ -1,14 +1,12 @@
 <?php
 
-namespace Php\Project\Games\Brain\Gcd;
+namespace Php\Project\Games\BrainGcd;
 
-use function Php\Project\Engine\checkAnswer;
+use function Php\Project\Engine\runGameEngine;
 
 # логика игры brain-gcd
 function runGcd(): void
 {
-    define('MAX_ROUND', 3);
-
     $data = [];
 
     for ($i = 0; $i < MAX_ROUND; $i++) {
@@ -17,13 +15,12 @@ function runGcd(): void
         $num2 = rand(1, 99);
 
         $data[] = [
-            'game' => 'Brain-gcd',
             'question' => "$num1 $num2",
             'result' => gcd($num1, $num2)
         ];
     }
 
-    checkAnswer($data, "Find the greatest common divisor of given numbers.");
+    runGameEngine($data, "Find the greatest common divisor of given numbers.");
 }
 
 

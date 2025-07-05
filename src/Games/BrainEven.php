@@ -1,13 +1,11 @@
 <?php
 
-namespace Php\Project\Games\Brain\Even;
+namespace Php\Project\Games\BrainEven;
 
-use function Php\Project\Engine\checkAnswer;
+use function Php\Project\Engine\runGameEngine;
 
 function runEven(): void
 {
-    define('MAX_ROUND', 3);
-
     $data = [];
 
     for ($i = 0; $i < MAX_ROUND; $i++) {
@@ -21,13 +19,12 @@ function runEven(): void
         };
 
         $data[] = [
-            'game' => 'Brain-even',
             'question' => $number,
             'result' => $result
         ];
     }
 
-    checkAnswer($data, 'Answer "yes" if the number is even, otherwise answer "no".');
+    runGameEngine($data, 'Answer "yes" if the number is even, otherwise answer "no".');
 }
 
 function isEven(int $number): bool

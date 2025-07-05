@@ -1,14 +1,12 @@
 <?php
 
-namespace Php\Project\Games\Brain\Prime;
+namespace Php\Project\Games\BrainPrime;
 
-use function Php\Project\Engine\checkAnswer;
+use function Php\Project\Engine\runGameEngine;
 
 # логика игры brain-prime
 function runPrime(): void
 {
-    define('MAX_ROUND', 3);
-
     $data = [];
 
     for ($i = 0; $i < MAX_ROUND; $i++) {
@@ -17,13 +15,12 @@ function runPrime(): void
 
 
         $data[] = [
-            'game' => 'Brain-prime',
             'question' => $number,
             'result' => prime($number)
         ];
     }
 
-    checkAnswer($data, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+    runGameEngine($data, 'Answer "yes" if given number is prime. Otherwise answer "no".');
 }
 
 
